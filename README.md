@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/github/license/holdenout/tree2tex?color=brightgreen)](https://github.com/holdenout/tree2tex/blob/master/COPYING)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
