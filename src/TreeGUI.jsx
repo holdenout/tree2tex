@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import tree from "./tree.js";
 import Node from "./Node";
 import "./TreeGUI.css";
-//4 layers article:
-// https://hackernoon.com/architecting-single-page-applications-b842ea633c2e
 
 const NodeContainer = props => {
   const descendents = props.node.children.map(ch => (

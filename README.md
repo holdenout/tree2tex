@@ -1,6 +1,22 @@
-[![License](https://img.shields.io/github/license/holdenout/tree2tex?color=brightgreen)](https://github.com/holdenout/tree2tex/blob/master/COPYING)
+# Tree2TeX
+[![License](https://img.shields.io/github/license/holdenout/tree2tex?color=blue)](https://github.com/holdenout/tree2tex/blob/master/COPYING)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+
+Tree2TeX is a graphical interface to build a [tree structure](https://en.wikipedia.org/wiki/Tree_structure) and translate to the [tikz-qtree](https://ctan.org/pkg/tikz-qtree) package format for [LaTeX](https://www.latex-project.org/).
+
+## Why does this exist?
+
+When creating trees in a LaTeX document&mdash;such as for [syntax trees](https://en.wikipedia.org/wiki/Parse_tree) in linguistics or demonstrating recurrence of algorithms&mdash;the often heavily nested structure can be a nightmare of mismatched brackets and misaligned whitespace.
+
+Tree2TeX aims to simplify that process by letting you build the tree visually and copy the resulting LaTeX to your document.
+
+## Potential Features
+- [ ] translation of extended character set for LaTeX (such as [IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet) characters and math symbols)
+- [ ] extended style formatting (for text and tree)
+- [ ] more of a WYSIWYG interface
+- [ ] in browser LaTeX preview
+- [ ] support for other tree libraries
 
 ## Available Scripts
 
@@ -11,36 +27,19 @@ In the project directory, you can run:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
+GNU General Public License v3.0 or later.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+See [COPYING](https://github.com/holdenout/tree2tex/blob/master/COPYING) to see the full text.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
