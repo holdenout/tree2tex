@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TreeGUI from "./TreeGUI.jsx";
-import LatexOutput from "./LatexOutput.jsx";
+import TreeTex from "./TreeTex.jsx";
 import tree from "./tree.js";
 
 class TreeInterface extends Component {
@@ -46,7 +46,7 @@ class TreeInterface extends Component {
           removeChild={this.removeChild}
           editName={this.editName}
         />
-        <LatexOutput treeData={this.state.treeData} strFormatting={this.state.strFormatting}/>
+        <TreeTex treeData={this.state.treeData} strFormatting={this.state.strFormatting}/>
       </div>
     )
   }

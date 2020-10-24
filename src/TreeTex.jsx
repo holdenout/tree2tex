@@ -23,7 +23,7 @@ function generateLatexTree(startNode, level = 0, strFormatting = {}) {
   );
 }
 
-export const LatexOutput = ({treeData, strFormatting}) => {
+export const TreeTex = ({treeData, strFormatting}) => {
   return (
     <div className="latex-output" align="left">
       <pre>
@@ -33,4 +33,4 @@ export const LatexOutput = ({treeData, strFormatting}) => {
   )
 };
 
-export default LatexOutput;
+export default TreeTex;
