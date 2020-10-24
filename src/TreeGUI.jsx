@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import tree from "./tree.js";
+import React from "react";
 import Node from "./Node";
 import "./TreeGUI.css";
 
@@ -22,72 +21,18 @@ const NodeContainer = props => {
   );
 };
 
-class Tree extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      treeData: tree("S"),
-      traverse: "",
-      strFormatting: ({
-        nodeStartStr: ".{",
-        nodeEndStr: "}",
-        indentStr: "    ",
-        childrenStartStr: "[",
-        childrenEndStr: "]"
-      })
-    };
-  }
-
-  addChild = (ancestor, newName, newPosition) => {
-    this.setState(prevState => ({
-      treeData: prevState.treeData.addChild(ancestor, newName, newPosition),
-      traverse: this.state.treeData.dfTraverseTex(undefined, undefined, this.state.strFormatting)
-    }));
-  };
-
-  removeChild = (node) => {
-    this.setState(prevState => ({
-      treeData: prevState.treeData.removeChild(node),
-      traverse: this.state.treeData.dfTraverseTex(undefined, undefined, this.state.strFormatting)
-    }));
-  }
-
-  editName = (node) => {
-    const newName = prompt("New name?");
-    this.setState(({ treeData }) => ({
-      treeData: treeData.editName(node, newName),
-      traverse: this.state.treeData.dfTraverseTex(undefined, undefined, this.strFormatting)
-    }));
-  }
-
-  render() {
+export const TreeGUI = props => {
     return (
-      <div className="tree-container">
+      <div className="treegui-container">
         <NodeContainer
-          key={this.state.treeData.root.id}
-          node={this.state.treeData.root}
-          addChild={this.addChild}
-          removeChild={this.removeChild}
-          editName={this.editName}
+          key={props.treeData.root.id}
+          node={props.treeData.root}
+          addChild={props.addChild}
+          removeChild={props.removeChild}
+          editName={props.editName}
         />
-        <div align="left">
-          <pre>
-            <code>{this.state.traverse}</code>
-          </pre>
-        </div>
       </div>
     );
-  }
-}
-
-class TreeGUI extends Component {
-  render() {
-    return (
-      <div className="container">
-        <Tree />
-      </div>
-    );
-  }
 }
 
 export default TreeGUI;
