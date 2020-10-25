@@ -9,6 +9,7 @@ class TreeInterface extends Component {
     this.state = {
       treeData: tree("S"),
       strFormatting: ({
+        treeDeclaration: "\\Tree",
         nodeStartStr: ".{",
         nodeEndStr: "}",
         indentStr: "    ",

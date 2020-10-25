@@ -27,7 +27,7 @@ export const TreeTex = ({treeData, strFormatting}) => {
   return (
     <div className="latex-output" align="left">
       <pre>
-        <code>{generateLatexTree(treeData.root, undefined, strFormatting)}</code>
+        <code>{strFormatting.treeDeclaration + generateLatexTree(treeData.root, undefined, strFormatting)}</code>
       </pre>
     </div>
   )
