@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import TreeGUI from "./TreeGUI";
+import TreeInterface from "./TreeInterface/TreeInterface.jsx";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <TreeGUI />
+        <TreeInterface />
       </div>
     );
   }
