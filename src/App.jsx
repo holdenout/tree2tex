@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import TreeInterface from "./TreeInterface.jsx";
+import TreeInterface from "./TreeInterface/TreeInterface.jsx";
 
 class App extends Component {
   render() {
