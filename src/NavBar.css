@@ -1,4 +1,46 @@
 .navbar {
-  background-color: grey;
-  text-align: left;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #212121;
+  padding: 0px;
+}
+
+.navbar button {
+  float: left;
+  padding: 5px;
+  background-color: inherit;
+  color: #d2d2d2;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #d2d2d2;
+  color: black;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 5% auto;
+  background-color: blue;
 }
