@@ -7,7 +7,7 @@ export const Node = ({ node, addChild, removeChild, editName }) => {
       <button id="delete" onClick={() => removeChild(node)}>
         &times;
       </button>
-      {node.name}
+        <span className="node-name">{node.name}</span>
       <button onClick={() => editName(node)}>edit</button>
       <AddNodeMenu node={node} addChild={addChild} />
     </div>

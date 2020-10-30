@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TreeGUI from "./TreeGUI.jsx";
 import TreeTex from "./TreeTex.jsx";
 import tree from "./tree.js";
+import "./TreeInterface.css";
 
 class TreeInterface extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class TreeInterface extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tree-interface">
         <TreeGUI
           treeData={this.state.treeData}
           addChild={this.addChild}
