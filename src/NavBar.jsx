@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./NavBar.css";
+import {about} from "./infoText/about.jsx";
+import {guide} from "./infoText/guide.jsx";
 
 const Modal = props => {
   return (
     <div className="modal">
       <div className="modal-overlay" onClick={props.close} />
       <div className="modal-content" onClick={null}>
-        <h1>MODAL</h1>
+        {props.page}
       </div>
     </div>
   )
@@ -17,10 +19,10 @@ export const NavBar = props => {
 
   return (
     <div className="navbar">
-      <button type="button" onClick={() => toggleModal(!displayModal)}>About</button>
-      <button type="button">Guide</button>
+      <button type="button" onClick={() => toggleModal(about)}>About</button>
+      <button type="button" onClick={() => toggleModal(guide)}>Guide</button>
       <button type="button">Preferences</button>
-      {displayModal && <Modal close={() => toggleModal(!displayModal)} />}
+      {displayModal && <Modal page={displayModal} close={() => toggleModal(false)} />}
     </div>
   );
 };

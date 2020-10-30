@@ -1,3 +1,0 @@
-Use package tikz-qtree.
-
-Copy and paste to your document.
