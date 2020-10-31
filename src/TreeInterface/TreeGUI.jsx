@@ -5,7 +5,7 @@ import "./TreeGUI.css";
 const NodeContainer = props => {
   const descendents = props.node.children.map(ch => (
     <NodeContainer
-      key={ch.name}
+      key={ch.id}
       node={ch}
       addChild={props.addChild}
       removeChild={props.removeChild}
