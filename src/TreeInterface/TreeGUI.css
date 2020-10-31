@@ -1,8 +1,5 @@
-.node-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
+.treegui-container {
+  background-color: #ffffff;
 }
 
 .node-container {
@@ -11,8 +8,19 @@
   padding-right: 5px;
 }
 
+.node-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
 .node {
   display: inline-block;
+}
+
+.node-name {
+  padding: 10px;
 }
 
 #delete {
