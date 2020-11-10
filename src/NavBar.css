@@ -6,7 +6,7 @@
   padding: 0px;
 }
 
-.navbar button {
+.nav-button {
   float: left;
   padding: 5px 10px;
   background-color: inherit;
@@ -17,7 +17,15 @@
   cursor: pointer;
 }
 
-.navbar button:hover {
+.github {
+  float: right;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+}
+
+.nav-button:hover {
   background-color: #018141;
   color: #010203;
 }
