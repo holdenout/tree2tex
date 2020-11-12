@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 export const AddNodeMenu = ({ node, addChild }) => {
   const [newNode, setNewNode] = useState({
@@ -57,7 +59,7 @@ export const AddNodeMenu = ({ node, addChild }) => {
       <br />
       {radioInputs}
       <br />
-      <input type="submit" value="Create" />
+      <button type="submit"><FontAwesomeIcon icon={faPlus} /></button>
     </form>
   );
 };

@@ -12,6 +12,11 @@
   margin-right: auto;
 }
 
+.node-container:only-child {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .node-row {
   display: flex;
   flex-direction: row;
@@ -27,11 +32,25 @@
 }
 
 .node-name {
-  padding: 10px;
+  display: inline-block;
+}
+
+.node button {
+  padding: 5px;
+  background-color: inherit;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.node button:hover {
+  background-color: #ccc;
 }
 
 #delete {
   float: right;
-  padding: 2px 5px;
-  background: #ccc;
+}
+
+#delete:hover {
+  color: red;
 }
