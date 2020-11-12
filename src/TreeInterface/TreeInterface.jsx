@@ -34,9 +34,11 @@ class TreeInterface extends Component {
 
   editName = (node) => {
     const newName = prompt("New name?");
-    this.setState(prevState => ({
-      treeData: prevState.treeData.editName(node, newName),
-    }));
+    if (typeof(newName) == "string") {
+      this.setState(prevState => ({
+        treeData: prevState.treeData.editName(node, newName),
+      }));
+    }
   }
 
   render() {
