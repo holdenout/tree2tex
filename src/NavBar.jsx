@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import {about} from "./infoText/about.jsx";
-import {guide} from "./infoText/guide.jsx";
-import {latexResources} from "./infoText/latexResources.jsx";
-import {preferences} from "./infoText/preferences.jsx";
+import About from "./NavBarPages/About.jsx";
+import Guide from "./NavBarPages/Guide.jsx";
+import LatexResources from "./NavBarPages/LatexResources.jsx";
+import Preferences from "./NavBarPages/Preferences.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 
@@ -12,7 +12,7 @@ const Modal = props => {
     <div className="modal">
       <div className="modal-overlay" onClick={props.close} />
       <div className="modal-content" onClick={null}>
-        {props.page}
+        {props.children}
       </div>
     </div>
   )
@@ -23,12 +23,15 @@ export const NavBar = props => {
 
   return (
     <div className="navbar">
-      <button className="nav-button" type="button" onClick={() => toggleModal(about)}>About</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(guide)}>Guide</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(latexResources)}>LaTeX Resources</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(preferences)}>Preferences</button>
+      <button className="nav-button" type="button" onClick={() => toggleModal(<About />)}>About</button>
+      <button className="nav-button" type="button" onClick={() => toggleModal(<Guide />)}>Guide</button>
+      <button className="nav-button" type="button" onClick={() => toggleModal(<LatexResources />)}>LaTeX Resources</button>
+      <button className="nav-button" type="button" onClick={() => toggleModal(<Preferences />)}>Preferences</button>
       <a className="nav-button github" href="https://github.com/holdenout/tree2tex" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
-      {displayModal && <Modal page={displayModal} close={() => toggleModal(false)} />}
+      {displayModal &&
+      <Modal close={() => toggleModal(false)}>
+        {displayModal}
+      </Modal>}
     </div>
   );
 };

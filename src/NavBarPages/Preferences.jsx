@@ -1,7 +1,7 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import "./preferences.css";
+import "./Preferences.css";
 
 const ToggleSwitch = props => {
   return (
@@ -18,13 +18,17 @@ const ToggleSwitch = props => {
   );
 }
 
-export const preferences = (
-  <div>
-    <h1>Preferences</h1>
-    <div className="content">
-      <span className="preference-title">Indent Style: </span>
-      <ToggleSwitch left="Spaces" right="Tabs" />
-      <p>In development...</p>
+export const Preferences = (props) => {
+  return (
+    <div>
+      <h1>Preferences</h1>
+      <div className="content">
+        <span className="preference-title">Indent Style: </span>
+        <ToggleSwitch left="Spaces" right="Tabs" />
+        <p>In development...</p>
+      </div>
     </div>
-  </div>
-)
+  );
+}
+
+export default Preferences;
