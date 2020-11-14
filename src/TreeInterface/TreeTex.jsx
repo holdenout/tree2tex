@@ -1,8 +1,8 @@
 import React from "react";
 
-function generateLatexTree(startNode, level = 0, strFormatting = {}) {
+function generateLatexTree(startNode, level = 0, texFormatting = {}) {
   const reducer = (latexTree, child) =>
-    latexTree + generateLatexTree(child, level + 1, strFormatting);
+    latexTree + generateLatexTree(child, level + 1, texFormatting);
 
   const nameStr = startNode.name.toString();
   const {
@@ -11,7 +11,7 @@ function generateLatexTree(startNode, level = 0, strFormatting = {}) {
     indentStr = "  ",
     childrenStartStr = "[",
     childrenEndStr = "]"
-  } = strFormatting;
+  } = texFormatting;
 
   return (
     startNode.children.reduce(
@@ -23,11 +23,11 @@ function generateLatexTree(startNode, level = 0, strFormatting = {}) {
   );
 }
 
-export const TreeTex = ({treeData, strFormatting}) => {
+export const TreeTex = ({treeData, texFormatting}) => {
   return (
     <div className="latex-output" align="left">
       <pre>
-        <code>{strFormatting.treeDeclaration + generateLatexTree(treeData.root, undefined, strFormatting)}</code>
+        <code>{texFormatting.treeDeclaration + generateLatexTree(treeData.root, undefined, texFormatting)}</code>
       </pre>
     </div>
   )

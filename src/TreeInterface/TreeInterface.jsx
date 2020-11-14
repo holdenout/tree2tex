@@ -7,17 +7,7 @@ import "./TreeInterface.css";
 class TreeInterface extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      treeData: tree("S"),
-      strFormatting: ({
-        treeDeclaration: "\\Tree",
-        nodeStartStr: ".{",
-        nodeEndStr: "}",
-        indentStr: "    ",
-        childrenStartStr: "[",
-        childrenEndStr: "]"
-      })
-    }
+    this.state = {treeData: tree("S")}
   }
 
   addChild = (ancestor, newName, newPosition) => {
@@ -50,7 +40,7 @@ class TreeInterface extends Component {
           removeChild={this.removeChild}
           editName={this.editName}
         />
-        <TreeTex treeData={this.state.treeData} strFormatting={this.state.strFormatting}/>
+        <TreeTex treeData={this.state.treeData} texFormatting={this.props.texFormatting}/>
       </div>
     )
   }
