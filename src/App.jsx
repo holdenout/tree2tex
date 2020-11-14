@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   editTexFormatting = (str, value) => {
+    console.log("test");
     this.setState(prevState => ({
       texFormatting: {...prevState.texFormatting, [str]: value}
     }));
@@ -27,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar editTexFormatting={this.editTexFormatting} texFormatting={this.state.texFormatting} />
         <TreeInterface texFormatting={this.state.texFormatting} />
       </div>
     );

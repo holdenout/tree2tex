@@ -26,7 +26,7 @@ export const NavBar = props => {
       <button className="nav-button" type="button" onClick={() => toggleModal(<About />)}>About</button>
       <button className="nav-button" type="button" onClick={() => toggleModal(<Guide />)}>Guide</button>
       <button className="nav-button" type="button" onClick={() => toggleModal(<LatexResources />)}>LaTeX Resources</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(<Preferences />)}>Preferences</button>
+      <button className="nav-button" type="button" onClick={() => toggleModal(<Preferences {...props} />)}>Preferences</button>
       <a className="nav-button github" href="https://github.com/holdenout/tree2tex" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
       {displayModal &&
       <Modal close={() => toggleModal(false)}>
