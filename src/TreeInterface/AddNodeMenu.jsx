@@ -59,7 +59,7 @@ export const AddNodeMenu = ({ node, addChild }) => {
       <br />
       {radioInputs}
       <br />
-      <button type="submit"><FontAwesomeIcon icon={faPlus} /></button>
+      <button type="submit"><FontAwesomeIcon className="fa-icon" icon={faPlus} /></button>
     </form>
   );
 };

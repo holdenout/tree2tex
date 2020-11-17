@@ -11,11 +11,11 @@ export const Node = ({ node, addChild, removeChild, editName }) => {
       </div>
 
       <button className="edit" onClick={() => editName(node)}>
-        <FontAwesomeIcon icon={faEdit} />
+        <FontAwesomeIcon className="fa-icon" icon={faEdit} />
       </button>
 
       <button id="delete" title="delete node" onClick={() => removeChild(node)}>
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <FontAwesomeIcon className="fa-icon" icon={faTrashAlt} />
       </button>
 
       <AddNodeMenu node={node} addChild={addChild} />

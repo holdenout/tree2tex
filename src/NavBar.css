@@ -3,18 +3,21 @@
   top: 0;
   width: 100%;
   background-color: #010203;
-  padding: 0px;
+  padding: 0;
+}
+
+.navbar button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .nav-button {
   float: left;
   padding: 5px 10px;
-  background-color: inherit;
   color: #018141;
-  border: none;
-  outline: none;
   font-size: 20px;
-  cursor: pointer;
 }
 
 .github {
@@ -52,6 +55,12 @@
   height: 50%;
   margin: 5% auto;
   background-color: #00c060;
+}
+
+#close {
+  float: right;
+  padding: 5px;
+  font-size: 1.2em;
 }
 
 .content {

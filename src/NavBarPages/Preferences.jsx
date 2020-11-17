@@ -19,7 +19,7 @@ const ToggleSwitch = props => {
           }
         />
         <span  className="toggle">
-          <FontAwesomeIcon className="toggle-control" icon={faArrowLeft} />
+          <FontAwesomeIcon className="fa-icon toggle-control" icon={faArrowLeft} />
         </span>
       </label>
       {props.right}

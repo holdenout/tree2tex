@@ -6,12 +6,20 @@ import LatexResources from "./NavBarPages/LatexResources.jsx";
 import Preferences from "./NavBarPages/Preferences.jsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Modal = props => {
   return (
     <div className="modal">
       <div className="modal-overlay" onClick={props.close} />
       <div className="modal-content" onClick={null}>
+        <button id="close" title="close" onClick={props.close}>
+          <FontAwesomeIcon
+            className="fa-icon"
+            style={{height: "1em", width: "1em"}} // Needed to override fa defaults
+            icon={faTimes}
+          />
+        </button>
         {props.children}
       </div>
     </div>
@@ -27,7 +35,7 @@ export const NavBar = props => {
       <button className="nav-button" type="button" onClick={() => toggleModal(<Guide />)}>Guide</button>
       <button className="nav-button" type="button" onClick={() => toggleModal(<LatexResources />)}>LaTeX Resources</button>
       <button className="nav-button" type="button" onClick={() => toggleModal(<Preferences {...props} />)}>Preferences</button>
-      <a className="nav-button github" href="https://github.com/holdenout/tree2tex" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>
+      <a className="nav-button github" href="https://github.com/holdenout/tree2tex" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-icon" icon={faGithub} /></a>
       {displayModal &&
       <Modal close={() => toggleModal(false)}>
         {displayModal}
