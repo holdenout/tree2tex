@@ -25,6 +25,7 @@ export const TreeGUI = props => {
     return (
       <div className="treegui-container">
         <NodeContainer
+          className="root-node"
           key={props.treeData.root.id}
           node={props.treeData.root}
           addChild={props.addChild}

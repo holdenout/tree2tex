@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import TreeGUI from "./TreeGUI.jsx";
 import TreeTex from "./TreeTex.jsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faRedoAlt} from "@fortawesome/free-solid-svg-icons";
 import tree from "./tree.js";
 import "./TreeInterface.css";
 
 class TreeInterface extends Component {
   constructor(props) {
     super(props);
-    this.state = {treeData: tree("S")}
+    this.state = {treeData: tree("Root")}
   }
 
   addChild = (ancestor, newName, newPosition) => {
@@ -31,9 +33,14 @@ class TreeInterface extends Component {
     }
   }
 
+  reset = () => {
+    this.setState({treeData: tree("Root")});
+  }
+
   render() {
     return (
       <div className="tree-interface">
+        <button className="reset-button" type="button" onClick={this.reset}><FontAwesomeIcon className="fa-icon" icon={faRedoAlt} /></button>
         <TreeGUI
           treeData={this.state.treeData}
           addChild={this.addChild}

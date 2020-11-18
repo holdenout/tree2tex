@@ -12,6 +12,10 @@
   margin-right: auto;
 }
 
+.treegui-container>.node-container {
+  padding-top: 5px;
+}
+
 .node-container:only-child {
   padding-left: 0;
   padding-right: 0;
