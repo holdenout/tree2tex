@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, useEffect} from "react";
 import "./NavBar.css";
 import About from "./NavBarPages/About.jsx";
 import Guide from "./NavBarPages/Guide.jsx";
@@ -8,19 +8,33 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
-const Modal = props => {
+const Modal = ({children, close}) => {
+  const handleKeyPress = e => {
+    if (e.key === "Escape") {
+      close();
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  });
+
   return (
     <div className="modal">
-      <div className="modal-overlay" onClick={props.close} />
+      <div className="modal-overlay" onClick={close} />
       <div className="modal-content" onClick={null}>
-        <button id="close" title="close" onClick={props.close}>
+        <button id="close" title="close" onClick={close}>
           <FontAwesomeIcon
             className="fa-icon"
             style={{height: "1em", width: "1em"}} // Needed to override fa defaults
             icon={faTimes}
           />
         </button>
-        {props.children}
+        {children}
       </div>
     </div>
   )
