@@ -4,11 +4,11 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import "./Modal.css";
 
 export const Modal = ({children, close}) => {
-  const handleKeyPress = event => {
+  const handleKeyPress = (event) => {
     if (event.key === "Escape") {
       close();
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -32,7 +32,7 @@ export const Modal = ({children, close}) => {
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Modal;
