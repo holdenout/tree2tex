@@ -35,8 +35,13 @@
   padding: 5px;
 }
 
-.node-name {
+.name, .node-name, .name-edit {
   display: inline-block;
+}
+
+.name-edit {
+  display: inline-block;
+  margin: auto 10px;
 }
 
 .node button {
@@ -50,10 +55,14 @@
   background-color: #ccc;
 }
 
+#submit-name:hover {
+  color: green;
+}
+
 #delete {
   float: right;
 }
 
-#delete:hover {
+#delete:hover, #cancel:hover {
   color: red;
 }
