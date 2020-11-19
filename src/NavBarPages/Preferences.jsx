@@ -15,11 +15,11 @@ const ToggleSwitch = (props) => {
         <input
           type="checkbox"
           checked={isChecked}
-          onChange={(e) => {
+          onChange={(event) => {
             toggleChecked(!isChecked);
             props.editTexFormatting(
               "indentStr",
-              e.target.checked ? "\t" : "    "
+              event.target.checked ? "\t" : "    "
             );
           }}
         />

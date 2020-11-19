@@ -8,14 +8,14 @@ export const AddNodeMenu = ({node, addChild}) => {
     newPosition: node.children.length,
   });
 
-  const handleChange = (e) => {
-    let {name, value} = e.target;
+  const handleChange = (event) => {
+    let {name, value} = event.target;
     if (name === "newPosition") value = parseInt(value);
     setNewNode({...newNode, [name]: value});
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     let {newName, newPosition} = newNode;
     if (newName === "") newName = undefined;
     addChild(node, newName, newPosition);

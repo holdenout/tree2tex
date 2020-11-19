@@ -9,8 +9,8 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({children, close}) => {
-  const handleKeyPress = (e) => {
-    if (e.key === "Escape") {
+  const handleKeyPress = (event) => {
+    if (event.key === "Escape") {
       close();
     }
   };
