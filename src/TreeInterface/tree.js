@@ -3,10 +3,10 @@ const treeNode = (id, name, parent) => ({
   name,
   children: [],
   level: parent ? parent.level + 1 : 0,
-  parent
+  parent,
 });
 
-export const tree = rootName => ({
+export const tree = (rootName) => ({
   rootId: "0",
   nextId: 1,
   root: treeNode("0", rootName, null),
@@ -23,8 +23,8 @@ export const tree = rootName => ({
   },
 
   removeChild(node) {
-    node.children.forEach(ch => this.removeChild(ch));
-    node.parent.children = node.parent.children.filter(ch => ch !== node);
+    node.children.forEach((ch) => this.removeChild(ch));
+    node.parent.children = node.parent.children.filter((ch) => ch !== node);
     return this;
   },
 
@@ -39,7 +39,6 @@ export const tree = rootName => ({
       [start.name]
     );
   },
-
 });
 
 export default tree;

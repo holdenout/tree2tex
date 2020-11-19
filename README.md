@@ -1,4 +1,5 @@
 # Tree2TeX
+
 [![License](https://img.shields.io/github/license/holdenout/tree2tex?color=blue)](https://github.com/holdenout/tree2tex/blob/master/COPYING)
 
 ## Overview
@@ -12,6 +13,7 @@ When creating trees in a LaTeX document&mdash;such as for [syntax trees](https:/
 Tree2TeX aims to simplify that process by letting you build the tree visually and copy the resulting LaTeX to your document.
 
 ## Potential Features
+
 - [ ] translation of extended character set for LaTeX (such as [IPA](https://en.wikipedia.org/wiki/International_Phonetic_Alphabet) characters and math symbols)
 - [ ] extended style formatting (for text and tree)
 - [ ] more of a WYSIWYG interface
@@ -38,6 +40,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 <br>
 
 ## License
+
 GNU General Public License v3.0 or later.
 
 See [COPYING](https://github.com/holdenout/tree2tex/blob/master/COPYING) to see the full text.

@@ -1,25 +1,25 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
-export const AddNodeMenu = ({ node, addChild }) => {
+export const AddNodeMenu = ({node, addChild}) => {
   const [newNode, setNewNode] = useState({
     newName: "",
-    newPosition: node.children.length
+    newPosition: node.children.length,
   });
 
-  const handleChange = e => {
-    let { name, value } = e.target;
+  const handleChange = (event) => {
+    let {name, value} = event.target;
     if (name === "newPosition") value = parseInt(value);
-    setNewNode({ ...newNode, [name]: value });
+    setNewNode({...newNode, [name]: value});
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    let { newName, newPosition } = newNode;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let {newName, newPosition} = newNode;
     if (newName === "") newName = undefined;
     addChild(node, newName, newPosition);
-    setNewNode({ newName: "", newPosition: node.children.length + 1 });
+    setNewNode({newName: "", newPosition: node.children.length + 1});
   };
 
   const radioInputs = node.children
@@ -44,7 +44,7 @@ export const AddNodeMenu = ({ node, addChild }) => {
           onChange={handleChange}
           checked={newNode.newPosition === node.children.length}
         />
-      </label>
+      </label>,
     ]);
 
   return (
@@ -59,7 +59,9 @@ export const AddNodeMenu = ({ node, addChild }) => {
       <br />
       {radioInputs}
       <br />
-      <button type="submit"><FontAwesomeIcon className="fa-icon" icon={faPlus} /></button>
+      <button type="submit">
+        <FontAwesomeIcon className="fa-icon" icon={faPlus} />
+      </button>
     </form>
   );
 };

@@ -10,13 +10,18 @@ function generateLatexTree(startNode, level = 0, texFormatting = {}) {
     nodeEndStr = "",
     indentStr = "  ",
     childrenStartStr = "[",
-    childrenEndStr = "]"
+    childrenEndStr = "]",
   } = texFormatting;
 
   return (
     startNode.children.reduce(
       reducer,
-      `${"\n" + indentStr.repeat(level) + childrenStartStr + nodeStartStr + nameStr + nodeEndStr}`
+      `${"\n" +
+        indentStr.repeat(level) +
+        childrenStartStr +
+        nodeStartStr +
+        nameStr +
+        nodeEndStr}`
     ) +
     `${(startNode.children.length ? "\n" + indentStr.repeat(level) : " ") +
       childrenEndStr}`
@@ -27,10 +32,13 @@ export const TreeTex = ({treeData, texFormatting}) => {
   return (
     <div className="latex-output" align="left">
       <pre>
-        <code>{texFormatting.treeDeclaration + generateLatexTree(treeData.root, undefined, texFormatting)}</code>
+        <code>
+          {texFormatting.treeDeclaration +
+            generateLatexTree(treeData.root, undefined, texFormatting)}
+        </code>
       </pre>
     </div>
-  )
+  );
 };
 
 export default TreeTex;

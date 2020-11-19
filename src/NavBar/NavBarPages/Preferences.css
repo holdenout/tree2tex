@@ -41,9 +41,9 @@
   left: 5px;
   background-color: white;
   border-radius: 50%;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-input:checked + .toggle>.toggle-control {
+input:checked + .toggle > .toggle-control {
   transform: translateX(15px) rotate(0.5turn);
 }
