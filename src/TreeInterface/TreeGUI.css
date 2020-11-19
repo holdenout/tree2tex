@@ -12,7 +12,7 @@
   margin-right: auto;
 }
 
-.treegui-container>.node-container {
+.treegui-container > .node-container {
   padding-top: 5px;
 }
 
@@ -35,7 +35,9 @@
   padding: 5px;
 }
 
-.name, .node-name, .name-edit {
+.name,
+.node-name,
+.name-edit {
   display: inline-block;
 }
 
@@ -63,6 +65,7 @@
   float: right;
 }
 
-#delete:hover, #cancel:hover {
+#delete:hover,
+#cancel:hover {
   color: red;
 }

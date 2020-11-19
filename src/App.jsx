@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./App.css";
 import TreeInterface from "./TreeInterface/TreeInterface.jsx";
 import NavBar from "./NavBar.jsx";
@@ -7,28 +7,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      texFormatting: ({
+      texFormatting: {
         treeDeclaration: "\\Tree",
         nodeStartStr: ".{",
         nodeEndStr: "}",
         indentStr: "    ",
         childrenStartStr: "[",
-        childrenEndStr: "]"
-      })
-    }
+        childrenEndStr: "]",
+      },
+    };
   }
 
   editTexFormatting = (str, value) => {
     console.log("test");
-    this.setState(prevState => ({
-      texFormatting: {...prevState.texFormatting, [str]: value}
+    this.setState((prevState) => ({
+      texFormatting: {...prevState.texFormatting, [str]: value},
     }));
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <NavBar editTexFormatting={this.editTexFormatting} texFormatting={this.state.texFormatting} />
+        <NavBar
+          editTexFormatting={this.editTexFormatting}
+          texFormatting={this.state.texFormatting}
+        />
         <TreeInterface texFormatting={this.state.texFormatting} />
       </div>
     );

@@ -9,11 +9,11 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
 
 const Modal = ({children, close}) => {
-  const handleKeyPress = e => {
+  const handleKeyPress = (e) => {
     if (e.key === "Escape") {
       close();
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -37,23 +37,53 @@ const Modal = ({children, close}) => {
         {children}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export const NavBar = props => {
+export const NavBar = (props) => {
   const [displayModal, toggleModal] = useState(false);
 
   return (
     <div className="navbar">
-      <button className="nav-button" type="button" onClick={() => toggleModal(<About />)}>About</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(<Guide />)}>Guide</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(<LatexResources />)}>LaTeX Resources</button>
-      <button className="nav-button" type="button" onClick={() => toggleModal(<Preferences {...props} />)}>Preferences</button>
-      <a className="nav-button github" href="https://github.com/holdenout/tree2tex" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className="fa-icon" icon={faGithub} /></a>
-      {displayModal &&
-      <Modal close={() => toggleModal(false)}>
-        {displayModal}
-      </Modal>}
+      <button
+        className="nav-button"
+        type="button"
+        onClick={() => toggleModal(<About />)}
+      >
+        About
+      </button>
+      <button
+        className="nav-button"
+        type="button"
+        onClick={() => toggleModal(<Guide />)}
+      >
+        Guide
+      </button>
+      <button
+        className="nav-button"
+        type="button"
+        onClick={() => toggleModal(<LatexResources />)}
+      >
+        LaTeX Resources
+      </button>
+      <button
+        className="nav-button"
+        type="button"
+        onClick={() => toggleModal(<Preferences {...props} />)}
+      >
+        Preferences
+      </button>
+      <a
+        className="nav-button github"
+        href="https://github.com/holdenout/tree2tex"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FontAwesomeIcon className="fa-icon" icon={faGithub} />
+      </a>
+      {displayModal && (
+        <Modal close={() => toggleModal(false)}>{displayModal}</Modal>
+      )}
     </div>
   );
 };

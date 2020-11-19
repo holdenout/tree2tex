@@ -3,8 +3,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 import "./Preferences.css";
 
-const ToggleSwitch = props => {
-  const [isChecked, toggleChecked] = useState(props.texFormatting.indentStr === "\t");
+const ToggleSwitch = (props) => {
+  const [isChecked, toggleChecked] = useState(
+    props.texFormatting.indentStr === "\t"
+  );
 
   return (
     <span className="toggle-switch-container">
@@ -15,17 +17,23 @@ const ToggleSwitch = props => {
           checked={isChecked}
           onChange={(e) => {
             toggleChecked(!isChecked);
-            props.editTexFormatting("indentStr", (e.target.checked ? "\t" : "    "))}
-          }
+            props.editTexFormatting(
+              "indentStr",
+              e.target.checked ? "\t" : "    "
+            );
+          }}
         />
-        <span  className="toggle">
-          <FontAwesomeIcon className="fa-icon toggle-control" icon={faArrowLeft} />
+        <span className="toggle">
+          <FontAwesomeIcon
+            className="fa-icon toggle-control"
+            icon={faArrowLeft}
+          />
         </span>
       </label>
       {props.right}
     </span>
   );
-}
+};
 
 export const Preferences = (props) => {
   return (
@@ -38,6 +46,6 @@ export const Preferences = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Preferences;
