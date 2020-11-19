@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import TreeInterface from "./TreeInterface/TreeInterface.jsx";
-import NavBar from "./NavBar.jsx";
+import NavBar from "./NavBar/NavBar.jsx";
 
 class App extends Component {
   constructor(props) {
