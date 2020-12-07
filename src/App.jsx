@@ -19,7 +19,6 @@ class App extends Component {
   }
 
   editTexFormatting = (str, value) => {
-    console.log("test");
     this.setState((prevState) => ({
       texFormatting: {...prevState.texFormatting, [str]: value},
     }));

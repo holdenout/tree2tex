@@ -1,48 +1,26 @@
-import React, {useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import {ArrowToggleSwitch} from "./ArrowToggleSwitch.jsx";
 import "./Preferences.css";
-
-const ToggleSwitch = (props) => {
-  const [isChecked, toggleChecked] = useState(
-    props.texFormatting.indentStr === "\t"
-  );
-
-  return (
-    <span className="toggle-switch-container">
-      {props.left}
-      <label className="toggle-switch">
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={(event) => {
-            toggleChecked(!isChecked);
-            props.editTexFormatting(
-              "indentStr",
-              event.target.checked ? "\t" : "    "
-            );
-          }}
-        />
-        <span className="toggle">
-          <FontAwesomeIcon
-            className="fa-icon toggle-control"
-            icon={faArrowLeft}
-          />
-        </span>
-      </label>
-      {props.right}
-    </span>
-  );
-};
 
 export const Preferences = (props) => {
   return (
     <div>
       <h1>Preferences</h1>
       <div className="content">
+        {/* Tabs vs spaces for indent */}
         <span className="preference-title">Indent Style: </span>
-        <ToggleSwitch left="Spaces" right="Tabs" {...props} />
-        <p>In development...</p>
+        <ArrowToggleSwitch
+          leftOption="Spaces"
+          rightOption="Tabs"
+          checkedCondition={props.texFormatting.indentStr === "\t"}
+          handleChange={(isChecked) => {
+            props.editTexFormatting(
+              "indentStr",
+              isChecked ? "\t" : " ".repeat(4)
+            );
+          }}
+        />
+        <p>More preferences in development...</p>
       </div>
     </div>
   );
