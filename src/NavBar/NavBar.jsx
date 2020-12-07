@@ -9,7 +9,7 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import Modal from "./Modal.jsx";
 
 export const NavBar = (props) => {
-  const [displayModal, toggleModal] = useState(false);
+  const [currentModal, changeModal] = useState(null);
   const pages = [
     {name: "About", page: <About />},
     {name: "Guide", page: <Guide />},
@@ -24,7 +24,7 @@ export const NavBar = (props) => {
           <button
             className="nav-button"
             type="button"
-            onClick={() => toggleModal(page)}
+            onClick={() => changeModal(page)}
           >
             {name}
           </button>
@@ -40,8 +40,8 @@ export const NavBar = (props) => {
         <FontAwesomeIcon className="fa-icon" icon={faGithub} />
       </a>
 
-      {displayModal && (
-        <Modal close={() => toggleModal(false)}>{displayModal}</Modal>
+      {currentModal && (
+        <Modal close={() => changeModal(null)}>{currentModal}</Modal>
       )}
     </div>
   );
