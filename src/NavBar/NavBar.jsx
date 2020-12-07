@@ -10,37 +10,27 @@ import Modal from "./Modal.jsx";
 
 export const NavBar = (props) => {
   const [displayModal, toggleModal] = useState(false);
+  const pages = [
+    {name: "About", page: <About />},
+    {name: "Guide", page: <Guide />},
+    {name: "Latex Resources", page: <LatexResources />},
+    {name: "Preferences", page: <Preferences {...props} />},
+  ];
 
   return (
     <div className="navbar">
-      <button
-        className="nav-button"
-        type="button"
-        onClick={() => toggleModal(<About />)}
-      >
-        About
-      </button>
-      <button
-        className="nav-button"
-        type="button"
-        onClick={() => toggleModal(<Guide />)}
-      >
-        Guide
-      </button>
-      <button
-        className="nav-button"
-        type="button"
-        onClick={() => toggleModal(<LatexResources />)}
-      >
-        LaTeX Resources
-      </button>
-      <button
-        className="nav-button"
-        type="button"
-        onClick={() => toggleModal(<Preferences {...props} />)}
-      >
-        Preferences
-      </button>
+      {pages.map(({name, page}) => {
+        return (
+          <button
+            className="nav-button"
+            type="button"
+            onClick={() => toggleModal(page)}
+          >
+            {name}
+          </button>
+        );
+      })}
+
       <a
         className="nav-button github"
         href="https://github.com/holdenout/tree2tex"
@@ -49,6 +39,7 @@ export const NavBar = (props) => {
       >
         <FontAwesomeIcon className="fa-icon" icon={faGithub} />
       </a>
+
       {displayModal && (
         <Modal close={() => toggleModal(false)}>{displayModal}</Modal>
       )}
