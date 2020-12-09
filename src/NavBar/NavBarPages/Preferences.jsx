@@ -1,6 +1,5 @@
 import React from "react";
 import {ArrowToggleSwitch} from "./ArrowToggleSwitch.jsx";
-import "./Preferences.css";
 
 export const Preferences = (props) => {
   return (
@@ -8,7 +7,12 @@ export const Preferences = (props) => {
       <h1>Preferences</h1>
       <div className="content">
         {/* Tabs vs spaces for indent */}
-        <span className="preference-title">Indent Style: </span>
+        <span
+          className="preference-title"
+          style={{"font-weight": "bold"}}
+        >
+          Indent Style:{" "}
+        </span>
         <ArrowToggleSwitch
           leftOption="Spaces"
           rightOption="Tabs"
