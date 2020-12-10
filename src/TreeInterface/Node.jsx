@@ -7,6 +7,7 @@ import {
   faCheckCircle,
 } from "@fortawesome/free-regular-svg-icons";
 import {faBan} from "@fortawesome/free-solid-svg-icons";
+import "./Node.css";
 
 const NameEdit = ({name, handleEdit, handleCancel}) => {
   const [newName, setNewName] = useState(name);
