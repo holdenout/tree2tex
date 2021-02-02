@@ -23,6 +23,7 @@ export const NavBar = (props) => {
         return (
           <button
             className="nav-button"
+            key={name}
             type="button"
             onClick={() => changeModal(page)}
           >
