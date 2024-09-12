@@ -1,5 +1,7 @@
 # Tree2TeX
 
+# Currently not up to date due to scaffolding switch!!!
+
 [![License](https://img.shields.io/github/license/holdenout/tree2tex?color=blue)](https://github.com/holdenout/tree2tex/blob/master/COPYING)
 
 ## Overview
